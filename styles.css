@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  background: #fff8f5;
+}
+
+.app-logo {
+  width: 50px;
+  border-radius: 50%;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #7b1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.navbar ul a {
+  color: #ffd6c0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar ul a:hover {
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url('./images/pig-bg.jpg') center/cover no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.52);
+  padding: 48px 60px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  color: #ffd6c0;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #c0392b;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #96281b;
+}
+
+/* Menu */
+.menu {
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: #7b1f1f;
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 260px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 14px 16px 6px;
+  color: #7b1f1f;
+}
+
+.card p {
+  padding: 0 16px 18px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Gallery */
+.gallery {
+  padding: 64px 40px;
+  background: #ffeee8;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  color: #7b1f1f;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.gallery-grid img:hover {
+  opacity: 0.85;
+}
+
+/* Location */
+.location {
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.location h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #7b1f1f;
+}
+
+.location > p {
+  margin-bottom: 32px;
+  color: #555;
+}
+
+.location-grid {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.location-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.1);
+  padding: 24px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 460px;
+  text-align: center;
+}
+
+.primary-card {
+  border: 2px solid #c0392b;
+  flex: 1.3;
+}
+
+.secondary-card {
+  opacity: 0.88;
+}
+
+.primary-badge {
+  display: inline-block;
+  background: #c0392b;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.primary-desc {
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.location-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #7b1f1f;
+  margin-bottom: 8px;
+}
+
+.location-card p {
+  color: #555;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.map-btn {
+  margin-bottom: 16px;
+  background: #2e7d32;
+  display: inline-block;
+}
+
+.map-btn:hover {
+  background: #1b5e20;
+}
+
+.map-embed {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+}
+
+/* Contact */
+.contact {
+  padding: 48px 40px;
+  background: #ffeee8;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+  color: #7b1f1f;
+}
+
+.contact-numbers {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  font-size: 2rem;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.contact-num {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #7b1f1f;
+}
+
+/* Footer */
+footer {
+  background: #7b1f1f;
+  color: #ffd6c0;
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-contact a {
+  color: #ffd6c0;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay {
+    padding: 32px 24px;
+  }
+
+  .menu,
+  .gallery,
+  .location {
+    padding: 40px 20px;
+  }
+}
