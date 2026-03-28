@@ -14,11 +14,13 @@ body {
   width: 60px;
   border-radius: 50%;
 }
-.logo{
+
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -39,6 +41,7 @@ body {
 
 .navbar ul {
   list-style: none;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 28px;
@@ -58,7 +61,7 @@ body {
 /* Hero */
 .hero {
   height: 90vh;
-  background: url('./images/pig-bg.jpg') center/cover no-repeat;
+  background: url('./images/black_white_photo.jpg') center/cover no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -194,7 +197,7 @@ body {
   color: #7b1f1f;
 }
 
-.location > p {
+.location>p {
   margin-bottom: 32px;
   color: #555;
 }
@@ -211,7 +214,7 @@ body {
 .location-card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 14px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
   padding: 24px;
   flex: 1;
   min-width: 280px;
@@ -271,7 +274,7 @@ body {
 .map-embed {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* Contact */
@@ -301,7 +304,7 @@ body {
   background: #fff;
   border-radius: 10px;
   padding: 20px 32px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: #222;
   transition: transform 0.2s;
@@ -354,6 +357,13 @@ footer {
   color: #fff;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('./images/pig-bg.jpg') center/cover no-repeat;
+  }
+
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .navbar {
@@ -361,6 +371,7 @@ footer {
     gap: 12px;
     padding: 16px 20px;
   }
+
 
   .hero-overlay h1 {
     font-size: 2rem;
