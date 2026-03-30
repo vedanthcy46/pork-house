@@ -52,20 +52,191 @@ body {
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
+  position: relative;
+  padding-bottom: 3px;
 }
 
-.navbar ul a:hover {
-  color: #fff;
+.navbar ul a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: #ffd6c0;
+  transition: width 0.3s ease;
 }
+
+.navbar ul a:hover::after { width: 100%; }
 
 /* Hero */
 .hero {
   height: 90vh;
-  background: url('./images/black_white_photo.jpg') center/cover no-repeat;
-  background-size: cover;
+  background: url('./images/types-pork-meat.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#pigCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(80,0,0,0.45) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Hero text entrance */
+.animate-hero {
+  animation: heroEntrance 1s 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroEntrance {
+  from { opacity: 0; transform: translateY(40px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Floating particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-particles span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: rgba(255, 180, 120, 0.18);
+  animation: floatUp linear infinite;
+}
+
+.hero-particles span:nth-child(1) { width:12px; height:12px; left:10%;  animation-duration:7s;  animation-delay:0s;   }
+.hero-particles span:nth-child(2) { width:20px; height:20px; left:25%;  animation-duration:9s;  animation-delay:1s;   }
+.hero-particles span:nth-child(3) { width:8px;  height:8px;  left:40%;  animation-duration:6s;  animation-delay:2s;   }
+.hero-particles span:nth-child(4) { width:16px; height:16px; left:55%;  animation-duration:11s; animation-delay:0.5s; }
+.hero-particles span:nth-child(5) { width:10px; height:10px; left:70%;  animation-duration:8s;  animation-delay:1.5s; }
+.hero-particles span:nth-child(6) { width:24px; height:24px; left:82%;  animation-duration:10s; animation-delay:3s;   }
+.hero-particles span:nth-child(7) { width:6px;  height:6px;  left:90%;  animation-duration:7s;  animation-delay:0.8s; }
+.hero-particles span:nth-child(8) { width:14px; height:14px; left:5%;   animation-duration:12s; animation-delay:2.5s; }
+
+@keyframes floatUp {
+  0%   { bottom: -20px; opacity: 0;   transform: translateX(0) scale(1); }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { bottom: 110%;  opacity: 0;   transform: translateX(30px) scale(1.3); }
+}
+
+/* Pulse button */
+.btn-pulse {
+  animation: btnPulse 2.5s 3s ease infinite;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); }
+  50%       { box-shadow: 0 0 0 12px rgba(192,57,43,0); }
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.reveal:nth-child(2) { transition-delay: 0.15s; }
+.card.reveal:nth-child(3) { transition-delay: 0.3s; }
+
+.gallery-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.gallery-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+.gallery-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+
+/* Splash Screen */
+.splash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #a02020 0%, #4a0a0a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.splash-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 214, 192, 0.3);
+  animation: ringPulse 1.8s ease-out infinite;
+}
+
+.splash-ring2 {
+  width: 280px;
+  height: 280px;
+  animation-delay: 0.4s;
+  border-color: rgba(255, 214, 192, 0.15);
+}
+
+@keyframes ringPulse {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.splash-logo {
+  width: 130px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(255, 100, 50, 0.5);
+  animation: splashPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.splash-text {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 18px;
+  letter-spacing: 2px;
+  animation: splashSlideUp 0.6s 0.2s ease both;
+}
+
+.splash-tagline {
+  color: #ffd6c0;
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  animation: splashSlideUp 0.6s 0.4s ease both;
+}
+
+@keyframes splashPop {
+  from { transform: scale(0.4) rotate(-10deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);    opacity: 1; }
+}
+
+@keyframes splashSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.splash-hide {
+  opacity: 0;
+  transform: scale(1.05);
 }
 
 .hero-overlay {
@@ -74,6 +245,8 @@ body {
   border-radius: 12px;
   text-align: center;
   color: #fff;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-overlay h1 {
@@ -357,12 +530,7 @@ footer {
   color: #fff;
 }
 
-@media (min-width: 768px) {
-  .hero {
-    background-image: url('./images/pig-bg.jpg') center/cover no-repeat;
-  }
 
-}
 
 /* Responsive */
 @media (max-width: 600px) {
