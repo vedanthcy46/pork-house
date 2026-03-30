@@ -530,6 +530,25 @@ footer {
   color: #fff;
 }
 
+.footer-credit {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: rgba(255,214,192,0.55);
+}
+
+.credit-link {
+  color: #ff8a70;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(255,138,112,0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.credit-link:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
 
 
 /* Responsive */
